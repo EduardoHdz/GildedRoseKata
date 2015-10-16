@@ -4,7 +4,11 @@ import java.util.List;
 
 public class GildedRose {
 	
-	public void updateQuality(List<Item> items) {
+	//Lista global
+	List<Item> items;
+
+
+	public void updateQuality() {
 		for (Item item : items) {
 
 			if (!item.getName().equals("Aged Brie") && !item.getName().equals("Backstage passes to a TAFKAL80ETC concert")) {
