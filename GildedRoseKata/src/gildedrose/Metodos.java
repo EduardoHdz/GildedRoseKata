@@ -16,11 +16,27 @@ public class Metodos {
         }
     }
 
+    void decreCalidadEspe(Item item){
+        if (item.getQuality() > 0) {
+            if (item.getName() != "Sulfuras, Hand of Ragnaros") {
+                decrementarCalidad(item);
+            }
+        }
+    }
 
     void calidad(Item item){
         if (item.getQuality() < 50) {
             // Aumenta la calidad del item a +1
             aumentarCalidad(item);
+        }
+    }
+
+
+    void ItemSulfuras(Item item){
+        if (item.getName() != "Sulfuras, Hand of Ragnaros") {
+            //Resta el precio de venta -1
+            decrementarPrecio(item);
+
         }
     }
 
@@ -32,5 +48,8 @@ public class Metodos {
 
         item.setQuality(item.getQuality() - 1);
 
+    }
+    void decrementarPrecio(Item item){
+        item.setSellIn(item.getSellIn() - 1);
     }
 }
