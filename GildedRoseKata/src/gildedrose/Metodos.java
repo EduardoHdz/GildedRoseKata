@@ -6,10 +6,11 @@ package gildedrose;
 public class Metodos {
 
     void venta(Item item){
+        //Si el precio es menor que 6
         if (item.getSellIn() < 11) {
-
             calidad(item);
         }
+        //si la precio es menor que 6
         if (item.getSellIn() < 6) {
 
             calidad(item);
@@ -17,7 +18,9 @@ public class Metodos {
     }
 
     void decreCalidadEspe(Item item){
+        //Si la calidad es mayor que 0
         if (item.getQuality() > 0) {
+            //Si el item se llama distinto a :
             if (item.getName() != "Sulfuras, Hand of Ragnaros") {
                 decrementarCalidad(item);
             }
@@ -25,6 +28,7 @@ public class Metodos {
     }
 
     void calidad(Item item){
+       //Si la calidad es menor que 50
         if (item.getQuality() < 50) {
             // Aumenta la calidad del item a +1
             aumentarCalidad(item);
@@ -32,7 +36,8 @@ public class Metodos {
     }
 
 
-    void ItemSulfuras(Item item){
+    void Item(Item item){
+        //Si el item se llama distinto de :
         if (item.getName() != "Sulfuras, Hand of Ragnaros") {
             //Resta el precio de venta -1
             decrementarPrecio(item);

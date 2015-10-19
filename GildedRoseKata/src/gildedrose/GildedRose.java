@@ -16,6 +16,7 @@ public class GildedRose extends Metodos {
 				}
 
 		}else {
+				//Si el item es menor que 50, aumenta la calidad
 				calidad(item);
                     //Si item equivale a 
 					if (item.getName().equals("Backstage passes to a TAFKAL80ETC concert")) {
@@ -24,27 +25,15 @@ public class GildedRose extends Metodos {
 
 			}
             //====================================================================================================\\
-            //Si el nombre del item no es igual a:
-			ItemSulfuras(item);
-			//if (item.getName() != "Sulfuras, Hand of Ragnaros") {
-                
-                //Resta el precio de venta -1
-			//	decrementarPrecio(item);
-			//}
+            //Si el nombre del item no es igual a Sulfuras, lo decrementa
+			Item(item);
 
             //Si el precio de venta es menor a 0
 			if (item.getSellIn() < 0) {
-
-
                // Si el nombre del item no es :
 				if (item.getName() != "Aged Brie") {
 					if (item.getName() != "Backstage passes to a TAFKAL80ETC concert") {
 						decreCalidadEspe(item);
-					//	if (item.getQuality() > 0) {
-					//		if (item.getName() != "Sulfuras, Hand of Ragnaros") {
-					//			item.setQuality(item.getQuality() - 1);
-					//		}
-					//}
 					} else {
 						item.setQuality(item.getQuality() - item.getQuality());
 					}
