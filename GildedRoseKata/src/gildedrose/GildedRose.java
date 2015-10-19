@@ -3,29 +3,32 @@ package gildedrose;
 import java.util.List;
 
 public class GildedRose {
-	
 
 
+		void aumentarCalidad(Item item){
+			item.setQuality(item.getQuality() + 1);
+		}
 
+		void decrementarCalidad(Item item) {
+
+				item.setQuality(item.getQuality() - 1);
+
+		}
 
 	public void updateQuality(List<Item> items) {
 		for (Item item : items) {
-			//Si el item no equivale a "Aged Brie" y "Back passes to TAFKAL80ETC concert"
-			//Si la cantidad del item es mayor que 0
-			if (!item.getName().equals("Aged Brie") && !item.getName().equals("Backstage passes to a TAFKAL80ETC concert") && !item.getName().equals("Sulfuras, Hand of Ragnaros")){
-				if (item.getQuality() > 0) {
 
-					//si el item no equivale
-					//if (!item.getName().equals("Sulfuras, Hand of Ragnaros")) {
-						// resta la calidad del item -1
-						item.setQuality(item.getQuality() - 1);
+			//Si el item no equivale a "Aged Brie" y "Back passes to TAFKAL80ETC concert y Sulfuras,Hand of Ragnaros
+			if (!item.getName().equals("Aged Brie") && !item.getName().equals("Backstage passes to a TAFKAL80ETC concert") && !item.getName().equals("Sulfuras, Hand of Ragnaros")){
+				//Si la cantidad del item es mayor que 0
+				if (item.getQuality() > 0) {
+					decrementarCalidad(item);
 				}
-				//}
 		}else {
                 // si la cantidad del item es menor que 50
 				if (item.getQuality() < 50) {
                     //Aumenta la cantidad 1 mas
-					item.setQuality(item.getQuality() + 1);
+					aumentarCalidad(item);
 
                     //Si item equivale a 
 					if (item.getName().equals("Backstage passes to a TAFKAL80ETC concert")) {
@@ -54,7 +57,7 @@ public class GildedRose {
 					}
 				}
 			}
-            
+            //====================================================================================================\\
             //Si el nombre del item no es igual a:
 			if (item.getName() != "Sulfuras, Hand of Ragnaros") {
                 
