@@ -2,25 +2,8 @@ package gildedrose;
 
 import java.util.List;
 
-public class GildedRose {
+public class GildedRose extends Metodos {
 
-	void calidad(Item item){
-		if (item.getQuality() < 50) {
-			// Aumenta la calidad del item a +1
-			aumentarCalidad(item);
-		}
-	}
-
-
-		void aumentarCalidad(Item item){
-			item.setQuality(item.getQuality() + 1);
-		}
-
-		void decrementarCalidad(Item item) {
-
-				item.setQuality(item.getQuality() - 1);
-
-		}
 
 	public void updateQuality(List<Item> items) {
 		for (Item item : items) {
@@ -34,40 +17,22 @@ public class GildedRose {
 
 		}else {
 				calidad(item);
-                // si la cantidad del item es menor que 50
-				//if (item.getQuality() < 50) {
-                    //Aumenta la cantidad 1 mas
-				//	aumentarCalidad(item);
-
                     //Si item equivale a 
 					if (item.getName().equals("Backstage passes to a TAFKAL80ETC concert")) {
-                        
+
+						venta(item);
                         //Si el precio de venta es menor a 11
-						if (item.getSellIn() < 11) {
+						//if (item.getSellIn() < 11) {
 
-							calidad(item);
-                            
-                            //Si la calidad del item es menor que 50
-							//if (item.getQuality() < 50) {
-                                
-                                //Aumenta la calidad +1
-							//	aumentarCalidad(item);
-							//}
-						}
-
+						//	calidad(item);
+						//}
                         //Si el precio de venta es menor a 6
-						if (item.getSellIn() < 6) {
+						//if (item.getSellIn() < 6) {
 
-							calidad(item);
-                            // Si la calidad del item es menor a 50
-							//if (item.getQuality() < 50) {
-                                
-                                // Aumenta la calidad del item a +1
-							//	aumentarCalidad(item);
-							//}
-						}
+						//	calidad(item);
+						//}
 					}
-				//}
+
 			}
             //====================================================================================================\\
             //Si el nombre del item no es igual a:
@@ -92,9 +57,7 @@ public class GildedRose {
 						item.setQuality(item.getQuality() - item.getQuality());
 					}
 				} else {
-					if (item.getQuality() < 50) {
-						item.setQuality(item.getQuality() + 1);
-					}
+						calidad(item);
 				}
 			}
 		}
