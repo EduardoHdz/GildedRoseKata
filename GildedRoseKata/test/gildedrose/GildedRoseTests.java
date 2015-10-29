@@ -246,7 +246,7 @@ public class GildedRoseTests {
 	}
 	
 	@Test
-	public void conjured_item_before_sell_date_update_decrements_quality_by_two () {
+	public void conjured_item_before_sell_date_update_decrements_quality_by_two () {    //////====================FALLA=====================>
 		getGildedRose().updateQuality(buildList(buildItem("Conjured Mana Cake")));
 		assertEquals(initialQuality - 2,  this.item.getQuality());
 	}
@@ -259,7 +259,7 @@ public class GildedRoseTests {
 	}
 
 	@Test
-	public void conjured_item_on_sell_date_update_decrements_quality_by_four () {
+	public void conjured_item_on_sell_date_update_decrements_quality_by_four () {       //////====================FALLA=====================>
 		initialSellIn = 0;
 		getGildedRose().updateQuality(buildList(buildItem("Conjured Mana Cake")));
 		assertEquals(initialQuality - 4,  this.item.getQuality());
@@ -274,7 +274,7 @@ public class GildedRoseTests {
 	}
 	
 	@Test
-	public void conjured_item_after_sell_date_update_decrements_quality_by_four () {
+	public void conjured_item_after_sell_date_update_decrements_quality_by_four () {    //////====================FALLA=====================>
 		initialSellIn = -10;
 		getGildedRose().updateQuality(buildList(buildItem("Conjured Mana Cake")));
 		assertEquals(initialQuality - 4,  this.item.getQuality());

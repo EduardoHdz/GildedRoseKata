@@ -28,13 +28,12 @@ public class Metodos {
     }
 
     void calidad(Item item){
-       //Si la calidad es menor que 50
+        //Si la calidad es menor que 50
         if (item.getQuality() < 50) {
             // Aumenta la calidad del item a +1
             aumentarCalidad(item);
         }
     }
-
 
     void Item(Item item){
         //Si el item se llama distinto de :
@@ -54,7 +53,13 @@ public class Metodos {
         item.setQuality(item.getQuality() - 1);
 
     }
+
     void decrementarPrecio(Item item){
         item.setSellIn(item.getSellIn() - 1);
+    }
+    void decrementarCalidadNew(Item item) {
+
+        item.setQuality(item.getQuality() - 2);
+
     }
 }
